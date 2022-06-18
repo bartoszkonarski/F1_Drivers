@@ -1,0 +1,104 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			html {
+				visibility: hidden;
+			}
+		</style>
+		<title>{% block title %} F1 Champions {% endblock %}</title>
+		<link
+			rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+			integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+			crossorigin="anonymous"
+		/>
+		<link
+			href="{% static '/css/main.css'  %}"
+			rel="stylesheet"
+			type="text/css"
+		/>
+	</head>
+	<body>
+		<br />
+		<div class="container" id="nav-photos">
+			<div class="row">
+				<div class="col-md-2">
+					<div
+						class="card card-body h-100 border-info card-bar"
+						id="profile-wrapper"
+					>
+						<img id="nav-pic" src="{% static 'images/verstappen.jpg' %}" />
+						<hr />
+						<h4>VER</h4>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div
+						class="card card-body h-100 border-info card-bar"
+						id="profile-wrapper"
+					>
+						<img id="nav-pic" src="{% static 'images/perez.jpg' %}" />
+						<hr />
+						<h4>PER</h4>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div
+						class="card card-body h-100 border-danger card-bar"
+						id="profile-wrapper"
+					>
+						<img id="nav-pic" src="{% static 'images/leclerc.jpg' %}" />
+						<hr />
+						<h4>LEC</h4>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div
+						class="card card-body h-100 border-danger card-bar"
+						id="profile-wrapper"
+					>
+						<img id="nav-pic" src="{% static 'images/sainz.jpg' %}" />
+						<hr />
+						<h4>SAI</h4>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div
+						class="card card-body h-100 border-success vettel card-bar"
+						id="profile-wrapper"
+					>
+						<img id="nav-pic" src="{% static 'images/vettel.jpg' %}" />
+						<hr />
+						<h4>VET</h4>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div
+						class="card card-body h-100 border-dark hamilton card-bar"
+						id="profile-wrapper"
+					>
+						<img id="nav-pic" src="{% static 'images/hamilton.jpg' %}" />
+						<hr />
+						<h4>HAM</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container" id="content">{% block content %} {% endblock %}</div>
+		{% block cookie %}
+		<div id="cookiePopup">
+			<h4>Cookie Consent</h4>
+			<p>
+				Our website uses cookies to provide your browsing experience and
+				relavent informations. Before continuing to use our website, please
+				agree and accept of our <a href="#">Cookie Policy</a>
+			</p>
+			<button id="acceptCookie">Accept</button>
+		</div>
+		{% endblock %}
+		<script src="{% static '/js/scripts.js'  %}"></script>
+	</body>
+</html>

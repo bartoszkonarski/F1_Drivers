@@ -1,0 +1,112 @@
+{% extends 'base.html' %}{% load static %} {% block title %} Lewis Hamilton
+{%endblock %} {% block content %}
+<div class="row">
+	<div class="col-md-3">
+		<div class="card card-body h-100 border-dark" id="profile-wrapper">
+			<img id="profile-pic" src="{% static 'images/hamilton.jpg' %}" />
+			<hr />
+			<h4>Lewis Hamilton</h4>
+			<h6>Mercedes AMG Petronas</h6>
+			<img class="data-pic" src="{% static 'images/mercedes.jpg' %}" />
+			<img class="data-pic" src="{% static 'images/britain.png' %}" />
+		</div>
+	</div>
+
+	<div class="col-md-9">
+		<div class="card card-body h-100 border-dark">
+			<h4>{{about}}</h4>
+			<hr />
+			<p>{{par1}}</p>
+
+			<p>{{par2}}</p>
+
+			<p>{{par3}}</p>
+
+			<ul class="social-links">
+				<li>
+					<a href="https://www.facebook.com/LewisHamilton" target="_blank"
+						><img class="social" src="{% static 'images/facebook.png' %}"
+					/></a>
+				</li>
+				<li>
+					<a href="https://twitter.com/LewisHamilton" target="_blank"
+						><img class="social" src="{% static 'images/twitter.png' %}"
+					/></a>
+				</li>
+				<li>
+					<a href="https://www.instagram.com/lewishamilton/" target="_blank"
+						><img class="social" src="{% static 'images/instagram.png' %}"
+					/></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<br />
+<div class="row">
+	<div class="col-md-6">
+		<div class="card card-body h-100">
+			<h5>{{ achievements }}</h5>
+			<hr />
+			<h6>F1</h6>
+			<p>
+				<span class="dates">2007</span>: {{ p2 }}<br />
+				<span class="dates">2008</span>: {{ p1 }}<br />
+				<span class="dates">2014</span>: {{ p1 }}<br />
+				<span class="dates">2015</span>: {{ p1 }}<br />
+				<span class="dates">2016</span>: {{ p2 }}<br />
+				<span class="dates">2017</span>: {{ p1 }}<br />
+				<span class="dates">2018</span>: {{ p1 }}<br />
+				<span class="dates">2019</span>: {{ p1 }}<br />
+				<span class="dates">2020</span>: {{ p1 }}<br />
+				<span class="dates">2021</span>: {{ p2 }}<br />
+			</p>
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="card card-body h-100">
+			<h5>{{ career }}</h5>
+			<hr />
+			<h6>F1</h6>
+			<p>
+				<span class="dates">2007 - 2012</span>: McLaren Mercedes <br />
+				<span class="dates">2012 - 2022</span>: Mercedes AMG Petronas
+				<br />
+			</p>
+		</div>
+	</div>
+</div>
+<br />
+<div class="row">
+	<div class="col-md-6">
+		<div class="card card-body h-100">
+			<h5>{{ statistics }}</h5>
+			<hr />
+			<p>
+				<span class="dates">{{ wins }}:</span> 53 (18.5%)<br />
+				<span class="dates">{{ podiums }}:</span> 122 (42.7%)<br />
+				<span class="dates">{{ pole_positions }}:</span> 57 (19.9%)<br />
+				<span class="dates">{{ championships }}:</span> 4 (25%)<br />
+				<span class="dates">{{ seasons }}:</span> 16<br />
+				<span class="dates">{{ events }}:</span> 286<br />
+				<span class="dates">{{ starts }}:</span> 284<br />
+				<span class="dates">{{ points }}:</span> 3074<br />
+				<span class="dates">{{ laps }}:</span> 16454<br />
+				<span class="dates">{{ fastest }}:</span> 38 (13.3%)<br />
+				<span class="dates">{{ retirements }}:</span> 37 (12.9%)<br />
+			</p>
+		</div>
+	</div>
+
+	<div class="col-md-6">
+		<div class="card card-body h-100">
+			<h5>{{ personal_car }}</h5>
+			<hr />
+			<h6 id="carName">Mercedes-Benz GLE-Class</h6>
+			<img class="car" src="{% static 'images/hamiltonCar.jpg' %}" />
+		</div>
+	</div>
+</div>
+<br />
+{% endblock content %}

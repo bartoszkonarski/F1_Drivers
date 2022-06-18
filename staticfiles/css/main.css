@@ -1,0 +1,114 @@
+html {
+    visibility: visible !important;
+}
+
+body {
+    background-color: #F8F8F8 !important;
+}
+
+#profile-wrapper {
+    text-align: center;
+}
+
+#profile-pic {
+    width: 90%;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#nav-pic {
+    width: 90%;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+#nav-photos {
+    margin-bottom: 5%;
+    margin-top: 25px;
+}
+.social-links ul, li {
+    list-style-type: none;
+    display: inline-block;
+}
+
+.social {
+    width: 20px;
+    height: 20px;
+}
+
+.dates {
+    text-decoration: underline;
+}
+
+.card-bar:active {
+    transform: scale(0.97);
+    transition: transform 0.3s;
+}
+
+.card-bar:hover {
+    transform: scale(1.2);
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+.data-pic {
+    width: 45%;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+#carName {
+    text-align: center;
+}
+#cookiePopup {
+    display: none;
+    background: white;
+    width: 35%;
+    position: fixed;
+    right: 10px;
+    bottom: 20px;
+    padding: 5px 10px;
+    text-align: center;
+    border-width: 3px;
+    border-color: #383838;
+}
+
+#cookiePopup p {
+    text-align: center;
+    font-size: 15px;
+    color: #383838;
+}
+
+#cookiePopup button {
+    width: 100%;
+    background: #054108;
+    padding: 5px;
+    border-radius: 10px;
+    color: white;
+}
+@media screen and (max-width: 768px) {
+    #profile-pic {
+        margin-top: auto;
+    }
+
+    .card-bar {
+        margin-top: 20px;
+
+    }
+
+    .card-bar:active {
+        transform: scale(0.97);
+        transition: transform 0.3s;
+    }
+
+    .card-bar:hover {
+        transform: none;
+        transition: transform 0.5s;
+    }
+}
