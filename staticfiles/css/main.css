@@ -92,6 +92,11 @@ ul {
     border-radius: 10px;
     color: white;
 }
+.lang-pic{
+    width: 100%;
+    border-style: solid;
+    border-width: 1px;
+}
 @media screen and (max-width: 768px) {
     #profile-pic {
         margin-top: auto;

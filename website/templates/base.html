@@ -23,6 +23,24 @@
 	</head>
 	<body>
 		<br />
+		<div class="container">
+			<div class="row">
+				<div class="col-md-1 offset-md-5">
+					<img
+						class="lang-pic"
+						id="en_lang"
+						src="{% static 'images/britain.png' %}"
+					/>
+				</div>
+				<div class="col-md-1">
+					<img
+						class="lang-pic"
+						id="pl_lang"
+						src="{% static 'images/poland.png' %}"
+					/>
+				</div>
+			</div>
+		</div>
 		<div class="container" id="nav-photos">
 			<div class="row">
 				<div class="col-md-2">
@@ -87,7 +105,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="container" id="content">{% block content %} {% endblock %}</div>
+		<div class="container" id="content">{% block content %}{% endblock %}</div>
 		{% block cookie %}
 		<div id="cookiePopup">
 			<h4>Cookie Consent</h4>

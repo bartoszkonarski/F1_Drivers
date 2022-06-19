@@ -1,10 +1,44 @@
 var hamilton = document.querySelectorAll('.hamilton')[0];
 var vettel = document.querySelectorAll('.vettel')[0];
 var contentBlock = document.querySelectorAll('#content')[0];
+var en_lang = document.querySelectorAll('#en_lang')[0];
+var pl_lang = document.querySelectorAll('#pl_lang')[0];
+en_lang.addEventListener('click', setEnglish);
+pl_lang.addEventListener('click', setPolish);
 
-function hamiltonReq() {
-	localStorage.setItem('driver', "hamilton");
-    response = fetch(`${window.origin}/hamilton/?lang=PL`).then(function (response) {
+function setEnglish() {
+  if(contentBlock.childNodes.length == 0){
+    localStorage.removeItem('driver');
+  }
+	localStorage.setItem('lang', "EN");
+  lang = localStorage.getItem('lang')
+  driver = localStorage.getItem('driver')
+  if (driver !== null)
+  {
+  response = fetch(`${window.origin}/${driver}/?lang=${lang}`).then(function (response) {
+	// The API call was successful!
+	return response.text();
+}).then(function (html) {
+	// This is the HTML from our response as a text string
+    document.open();
+	document.write(html);
+    document.close();
+}).catch(function (err) {
+	// There was an error
+	console.warn('Something went wrong.', err);
+});
+
+}}
+function setPolish(){
+  if(contentBlock.childNodes.length == 0){
+    localStorage.removeItem('driver');
+  }
+	localStorage.setItem('lang', "PL");
+  lang = localStorage.getItem('lang')
+  driver = localStorage.getItem('driver')
+  if (driver !== null)
+  {
+  response = fetch(`${window.origin}/${driver}/?lang=${lang}`).then(function (response) {
 	// The API call was successful!
 	return response.text();
 }).then(function (html) {
@@ -17,10 +51,34 @@ function hamiltonReq() {
 	console.warn('Something went wrong.', err);
 });
 }
+}
+
+function hamiltonReq() {
+  if (typeof localStorage.getItem('lang') === 'undefined'){
+      localStorage.setItem('lang', "EN");
+  }
+	localStorage.setItem('driver', "hamilton");
+  lang = localStorage.getItem('lang')
+    response = fetch(`${window.origin}/hamilton/?lang=${lang}`).then(function (response) {
+	// The API call was successful!
+	return response.text();
+}).then(function (html) {
+	// This is the HTML from our response as a text string
+    document.open();
+	document.write(html);
+    document.close();
+    
+}).catch(function (err) {
+	// There was an error
+	console.warn('Something went wrong.', err);
+});
+
+}
 hamilton.addEventListener('click', hamiltonReq);
 
 function vettelReq() {
-    response = fetch(`${window.origin}/vettel`).then(function (response) {
+  localStorage.setItem('driver', "vettel");
+  response = fetch(`${window.origin}/vettel`).then(function (response) {
 	// The API call was successful!
 	return response.text();
 }).then(function (html) {

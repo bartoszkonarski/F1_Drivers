@@ -7,7 +7,6 @@ def home(request):
 def hamilton(request):
 	with open('website/drivers_jsons/hamilton.json', encoding='utf-8') as json_file:
 		data = json.load(json_file)
-		print(data)
 	lang = request.GET.get('lang')
 	if lang == "PL":
 		context = data["PL"]
